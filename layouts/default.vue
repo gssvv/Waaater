@@ -19,7 +19,8 @@
     .container.mobile
       nuxt
 
-    nav-slider
+    client-only
+      nav-slider
 
 </template>
 
@@ -27,7 +28,7 @@
 import NavSlider from '@/components/NavSlider.vue'
 
 export default {
-  created() {
+  beforeMount() {
     this.$store.dispatch('progress/init')
   },
   components: { NavSlider }

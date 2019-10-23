@@ -5,7 +5,8 @@
       h1.title(v-text="currentDate")
       nuxt-link(to="stats").btn.btn--text.btn--x-small.tac Open stats
 
-    progress-circle(@targetReached="doneMode = true" :refresh="refreshTrigger")
+    client-only
+      progress-circle(@targetReached="doneMode = true" :refresh="refreshTrigger")
 
     .actions(:class="{done: doneMode}")
       a(@click="$router.push('/settings')").btn.btn--icon
