@@ -1,0 +1,82 @@
+@keyframes fadeOut 
+  0%
+    transform: scale(0.75)
+    opacity: .5
+  100%
+    transform: scale(1)
+    opacity: 1
+
+.fadeOutTrigger
+  animation: .25s fadeOut ease 
+  
+.home
+  align-content: space-between
+  display: grid
+  .progress-circle
+    position: relative
+    animation: .5s fadeOut ease 
+    .circle
+      &__canvas
+        width: 260px
+        height: 260px
+        margin: auto
+        display: block
+
+      &__content
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        text-align: center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .water-left
+          font-size: 2.125em
+          color: $blue-d-3
+          font-weight: 600
+          text-transform: uppercase
+          margin-top: 90px
+        .target
+          margin-top: auto
+          margin-bottom: 70px
+        &.done
+          *
+            color: #fff
+            
+  .actions
+    display: grid
+    grid-auto-flow: column
+    grid-gap: 28px
+    align-items: center
+    justify-content: center
+    justify-items: center
+    position: relative
+    *
+      transition: .25s ease
+    &__share
+      pointer-events: none
+      position: absolute
+      opacity: 0
+      transform: scale(.8)
+    &.done
+      .actions__share
+        opacity: 1
+        pointer-events: auto
+        transform: scale(1)
+      .btn--icon
+        opacity: 0
+        transform: scale(.8)
+        pointer-events: none
+
+@include respond-to-v(ix)
+  .home
+    .progress-circle
+      .circle
+        &__canvas
+          width: 300px
+          height: 300px
+        &__content
+          .water-left
+            margin-top: 110px

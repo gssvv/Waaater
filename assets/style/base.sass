@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap')
+
+body, html
+  font-family: 'Red Hat Display', sans-serif
+  font-size: 16px
+  min-height: 100vh
+  margin: 0px
+  color: #222
+  scroll-behavior: smooth
+  word-break: break-word
+
+*
+  box-sizing: border-box
+
+a
+  color: inherit
+  transition: .25s ease
+  text-decoration: none
+
+h3
+  font-size: 18px
+  letter-spacing: .75px
+  font-weight: bold
+  margin: 0
+  color: $blue-d-2
+
+.tdu
+  text-decoration: underline
+
+.hint
+  font-size: 0.75em
+  letter-spacing: 1.5px
+  color: $blue-d-2
+  font-weight: 500
+  text-transform: uppercase
+  &.small
+    font-size: 0.6em
+    font-weight: 400
+
+.btn
+  text-transform: uppercase
+  letter-spacing: .085em
+  font-size: 1.125em
+  padding: 12px
+  cursor: pointer
+  color: $blue
+  font-weight: 500
+  &--text
+    background-color: transparent
+  &--x-small
+    font-size: 0.75em
+  &--icon-text
+    display: inline-flex
+    align-items: center
+    img
+      height: 24px
+      margin-right: 16px
+  &--icon
+    background: $gradient
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      height: 20px
+    &--large
+      height: 70px
+      width: 70px
+      img
+        height: 36px
+  &:active
+    transform: scale(.9)
+    opacity: .8
+
+.radio-button
+  input
+    display: none
+  label
+    display: inline-flex
+    align-items: center
+    margin-top: 16px
+    color: $blue-d-2
+    font-size: 14px
+    font-weight: 500
+    line-height: 0
+    position: relative
+    &:before
+      content: ""
+      display: inline-block
+      height: 18px
+      width: 18px
+      border-radius: 50%
+      border: 2px solid $blue
+      margin-right: 8px
+      position: relative
+    &:after
+      content: ""
+      position: absolute
+      left: 6px
+      height: 10px
+      width: 10px
+      border-radius: 50%
+      background-color: $blue
+      opacity: 0
+      transition: .1s ease-in
+  input:checked ~ label:after
+    opacity: 1
+
+.text-input
+  padding: 12px
+  border: 1px solid $blue-l-2
+  border-radius: 4px
+  margin-top: 16px
+  font-size: 14px
+  color: $blue-d-2
+  font-weight: 500
+  width: 100%
+  transition: .25s ease
+  background: transparent
+  &:focus
+    outline: none
+    border-color: $blue-l-1
+
+
+
+
+
+.slide-left-enter-active, .slide-left-leave-active 
+  transition: .25s ease
+
+.slide-right-enter-active, .slide-right-leave-active 
+  transition: .25s ease
+
+.slide-enter-active, .slide-leave-active 
+  transition: .20s ease
+ 
+
+
+.slide-left-enter
+  opacity: 0
+  transform: translateX(-30px) scale(0.9)
+.slide-left-leave-active
+  opacity: 0 
+  transform: translateX(70px) scale(0.9)
+
+.slide-enter
+  opacity: 0
+  transform: translateX(30px) scale(0.9)
+.slide-leave-active
+  opacity: 0 
+  transform: translateX(-70px) scale(0.9)
+
+
+@for $i from 1 through 25
+  .pa-#{$i}
+    padding: 4px * $i !important
+  .px-#{$i}
+    padding-left: 4px * $i
+    padding-right: 4px * $i !important
+  .py-#{$i}
+    padding-top: 4px * $i
+    padding-bottom: 4px * $i !important
+  @each $name, $direction in (pl, left), (pt, top), (pr, right), (pb, bottom)
+    .#{$name}-#{$i}
+      padding-#{$direction}: 4px * $i !important
+  
+  .ma-#{$i}
+    margin: 4px * $i !important
+  .mx-#{$i}
+    margin-left: 4px * $i
+    margin-right: 4px * $i !important
+  .my-#{$i}
+    margin-top: 4px * $i
+    margin-bottom: 4px * $i !important
+  @each $name, $direction in (ml, left), (mt, top), (mr, right), (mb, bottom)
+    .#{$name}-#{$i}
+      margin-#{$direction}: 4px * $i !important
+
+@include respond-to(sm)
+  body, html
+    overflow: hidden
+
+@include respond-to-v(i8)
+  .btn
+    &--icon
+      width: 50px
+      height: 50px
+      img
+        height: 24px
+      &--large
+        height: 90px
+        width: 90px
+        img
+          height: 42px

@@ -1,0 +1,73 @@
+.layout.default
+  display: grid
+  grid-template-columns: auto
+  grid-template-rows: auto 100px
+  min-height: 100vh
+  background-image: url('/img/bg.svg')
+  background-size: cover
+  .side-menu
+    display: grid
+  .nav-slider
+    display: none
+  .container
+    max-width: 100vw
+    padding-top: 40px
+    display: grid
+    justify-content: center
+    grid-template-columns: auto 15px [content] 1fr 15px auto  
+    &.mobile
+      display: none
+      overflow: hidden
+    .content
+      grid-column-start: content
+      width: 100%
+      margin: auto
+      &:not(.desktop)
+        height: calc(100vh - 120px)
+        max-width: 568px
+      &.desktop
+        max-width: 900px
+      &__header
+        text-align: center
+        .title
+          font-size: 2.5em
+          color: $blue-d-3
+          font-weight: 500
+          margin: 0 0 8px 0 
+            
+
+
+
+@include respond-to-v(i8)
+  .layout.default
+    .container
+      .content:not(.desktop)
+        height: calc(100vh - 140px)
+
+@include respond-to-v(i8p)
+  .layout.default
+    .container
+      .content:not(.desktop)
+        height: calc(100vh - 160px)
+
+@include respond-to-v(ix)
+  .layout.default
+    .container
+      padding-top: 80px
+      .content:not(.desktop)
+        height: calc(100vh - 240px)
+        &__header
+          margin-bottom: 24px
+          .title
+            font-size: 3em
+
+@include respond-to(sm)
+  .layout.default
+    .container.desktop
+      display: none
+    .container.mobile
+      display: grid
+    .nav-slider
+      display: flex
+
+      
