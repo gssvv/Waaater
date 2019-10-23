@@ -1,7 +1,7 @@
 {
-  "name": "waaater",
+  "name": "waaater-vuejs-pwa",
   "version": "1.0.0",
-  "description": "My superb Nuxt.js project",
+  "description": "Mobile-oriented PWA app powered by Vue.js. If you want to try it, open this website on mobile device. On Android, you can also download it in Chrome browser ('Add to Home screen' function) and use offline (PWA). Made by Alexander Gesev. Or just open this site in a smaller window and reload the page.",
   "author": "Alexander Gusev",
   "private": true,
   "scripts": {

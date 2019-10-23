@@ -53,6 +53,18 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+  pwa: {
+    meta: {
+      mobileAppIOS: true,
+      name: 'Waaater App',
+      author: 'Alexander Gusev',
+      description:
+        'Mobile-oriented PWA app powered by Vue.js. If you want to try it, open this website on mobile device. On Android, you can also download it in Chrome browser ("Add to Home screen" function) and use offline (PWA). Made by Alexander Gesev. Or just open this site in a smaller window and reload the page.',
+      theme_color: '#fff',
+      lang: 'en',
+      ogTitle: 'Waaater App | Vue.js PWA by Alexander Gusev'
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

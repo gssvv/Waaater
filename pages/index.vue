@@ -29,6 +29,9 @@ import { mapActions, mapState } from 'vuex'
 import dayjs from 'dayjs'
 
 export default {
+  head: {
+    title: 'Waaater App | Vue.js PWA by Alexander Gusev'
+  },
   data() {
     return {
       doneMode: false,
