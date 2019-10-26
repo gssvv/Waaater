@@ -5,8 +5,6 @@
 </template>
 
 <script>
-console.log(process.server)
-
 if (process.client) {
   var Hammer = require('hammerjs')
 }

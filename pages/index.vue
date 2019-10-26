@@ -8,16 +8,17 @@
     client-only
       progress-circle(@targetReached="doneMode = true" :refresh="refreshTrigger")
 
-    .actions(:class="{done: doneMode}")
-      a(@click="$router.push('/settings')").btn.btn--icon
-        img(src='/img/icons/cog.svg')
-      a(@click="addWater").btn.btn--icon.btn--icon--large
-        img(src='/img/icons/raindrop.svg')
-      a(@click="returnWater").btn.btn--icon
-        img(src='/img/icons/refresh.svg')
-      a(@click="refreshProgress").btn.btn--icon-text.actions__share
-        img(src="/img/icons/refresh-blue.svg")
-        span Refresh
+    client-only
+      .actions(:class="{done: doneMode}")
+        a(@click="$router.push('/settings')").btn.btn--icon
+          img(src='/img/icons/cog.svg')
+        a(@click="addWater").btn.btn--icon.btn--icon--large
+          img(src='/img/icons/raindrop.svg')
+        a(@click="returnWater").btn.btn--icon
+          img(src='/img/icons/refresh.svg')
+        a(@click="refreshProgress" v-if="showRefresh").btn.btn--icon-text.actions__share
+          img(src="/img/icons/refresh-blue.svg")
+          span Refresh
   
         
 
@@ -35,12 +36,21 @@ export default {
   data() {
     return {
       doneMode: false,
+      showRefresh: false,
       refreshTrigger: false
+    }
+  },
+  watch: {
+    doneMode(val) {
+      setTimeout(() => {
+        this.showRefresh = val
+      }, 500)
     }
   },
   methods: {
     refreshProgress() {
       this.doneMode = false
+      this.showRefresh = false
       this.refreshTrigger = !this.refreshTrigger
       this.refresh()
     },
