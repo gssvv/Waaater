@@ -1,6 +1,6 @@
 # waaater
 
-> My superb Nuxt.js project
+> Check [this demo](https://waaater.gusev.me/) on mobile device
 
 ## Build Setup
 
