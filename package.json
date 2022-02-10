@@ -20,7 +20,7 @@
     "dayjs": "^1.8.16",
     "express": "^4.16.4",
     "hammerjs": "^2.0.8",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.0.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
